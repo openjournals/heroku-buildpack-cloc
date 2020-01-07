@@ -11,5 +11,11 @@ curl -L https://github.com/AlDanial/cloc/releases/download/1.84/cloc-1.84.tar.gz
 # make a directory to untar (like unzip) the binary
 mkdir -p vendor/cloc
 
-# untar the binary to the directory we want
-tar -C vendor/cloc -xvf cloc-1.84.tar.gz
+# untar cloc
+tar -xvf cloc-1.84.tar.gz
+
+# Move the binary
+mv cloc-1.84/cloc vendor/bin/
+
+# clean up after ourselves
+rm -rf cloc-1.84*
