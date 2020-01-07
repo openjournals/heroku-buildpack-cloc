@@ -6,7 +6,7 @@ echo "-----> Installing cloc 1.8.4"
 cd $1
 
 # download the binary (-O) silently (-s)
-curl -L https://github.com/AlDanial/cloc/releases/download/1.84/cloc-1.84.tar.gz -s -O -ssl3
+curl -L https://github.com/AlDanial/cloc/releases/download/1.84/cloc-1.84.tar.gz -s -O
 
 # make a directory to untar (like unzip) the binary
 mkdir -p vendor/cloc
