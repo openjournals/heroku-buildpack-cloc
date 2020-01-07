@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+echo "cloc 1.8.4"
+exit 0
