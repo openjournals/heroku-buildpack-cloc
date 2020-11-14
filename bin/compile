@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 
-echo "-----> Installing cloc 1.8.4"
+echo "-----> Installing cloc 1.8.8"
 
 # change to the the BUILD_DIR ($1)
 cd $1
 
 # download the binary (-O) silently (-s)
-curl -L https://github.com/AlDanial/cloc/releases/download/1.84/cloc-1.84.tar.gz -s -O
+curl -L https://github.com/AlDanial/cloc/releases/download/1.88/cloc-1.88.tar.gz -s -O
 
-# make a directory to untar (like unzip) the binary
+# make a directory to place the binary
 mkdir -p vendor/cloc
 
 # untar cloc
-tar -xvf cloc-1.84.tar.gz
+tar -xvf cloc-1.88.tar.gz
 
 # Move the binary
-mv cloc-1.84/cloc vendor/bin/
+mv cloc-1.88/cloc vendor/cloc/
 
 # clean up after ourselves
-rm -rf cloc-1.84*
+rm -rf cloc-1.88*
