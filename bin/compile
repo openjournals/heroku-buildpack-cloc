@@ -17,8 +17,5 @@ tar -xvf cloc-1.88.tar.gz
 # Move the binary
 mv cloc-1.88/cloc vendor/cloc/
 
-# Add cloc to PATH
-export PATH="$PATH:$HOME/vendor/cloc"
-
 # clean up after ourselves
 rm -rf cloc-1.88*
