@@ -12,7 +12,7 @@ curl -L https://github.com/AlDanial/cloc/releases/download/1.88/cloc-1.88.tar.gz
 mkdir -p vendor/cloc
 
 # untar cloc
-tar -xvf cloc-1.88.tar.gz
+tar -xf cloc-1.88.tar.gz
 
 # Move the binary
 mv cloc-1.88/cloc vendor/cloc/
