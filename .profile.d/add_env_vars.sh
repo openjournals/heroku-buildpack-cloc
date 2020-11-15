@@ -1,2 +1,2 @@
 # Add cloc to PATH
-export PATH="$PATH:$HOME/vendor/cloc"
+export PATH=$PATH:$HOME/vendor/bin
