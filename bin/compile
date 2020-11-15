@@ -9,13 +9,15 @@ cd $1
 curl -L https://github.com/AlDanial/cloc/releases/download/1.88/cloc-1.88.tar.gz -s -O
 
 # make a directory to place the binary
-mkdir -p vendor/cloc
+mkdir -p vendor/bin
 
 # untar cloc
 tar -xf cloc-1.88.tar.gz
 
 # Move the binary
-mv cloc-1.88/cloc vendor/cloc/
+mv cloc-1.88/cloc vendor/bin/
 
 # clean up after ourselves
 rm -rf cloc-1.88*
+
+echo "-----> cloc 1.8.8 installed!"
