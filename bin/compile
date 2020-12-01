@@ -1,21 +1,36 @@
 #!/usr/bin/env bash
 
-echo "-----> Installing cloc 1.8.4"
+echo "-----> Installing cloc 1.8.8"
 
 # change to the the BUILD_DIR ($1)
 cd $1
+BUILD_DIR=$1
 
 # download the binary (-O) silently (-s)
-curl -L https://github.com/AlDanial/cloc/releases/download/1.84/cloc-1.84.tar.gz -s -O
+echo "       - Downloading CLOC"
+curl -L https://github.com/AlDanial/cloc/releases/download/1.88/cloc-1.88.tar.gz -s -O
 
-# make a directory to untar (like unzip) the binary
-mkdir -p vendor/cloc
+# make a directory to place the binary
+mkdir -p vendor/bin
 
 # untar cloc
-tar -xvf cloc-1.84.tar.gz
+tar -xf cloc-1.88.tar.gz
 
 # Move the binary
-mv cloc-1.84/cloc vendor/bin/
+echo "       - Moving binary file"
+mv cloc-1.88/cloc vendor/bin/
+
+# Writing profile script to add binary dir to PATH
+echo "       - Setting PATH"
+mkdir -p $BUILD_DIR/.profile.d
+cat <<EOF >$BUILD_DIR/.profile.d/add-env-vars.sh
+export PATH="\$HOME/vendor/bin:\$PATH"
+EOF
+
+export PATH="$BUILD_DIR/vendor/bin:$PATH"
 
 # clean up after ourselves
-rm -rf cloc-1.84*
+echo "       - Cleaning up"
+rm -rf cloc-1.88*
+
+echo "-----> cloc 1.8.8 installed!"
